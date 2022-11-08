@@ -1,0 +1,420 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+html {
+  height: 100%;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  scroll-behavior: smooth;
+  scroll-padding-top: 20px;
+}
+body {
+  max-width: 1920px;
+  line-height: 1.5;
+  margin-left: auto;
+  margin-right: auto;
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+}
+img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Help prevent overflow of long words/names/URLs */
+h1,
+h2,
+h3,
+h4,
+p,
+li {
+  word-break: break-word;
+  hyphens: auto;
+}
+
+/* HTML5 container elements full viewport width */
+header,
+section,
+footer {
+  width: 100%;
+}
+/* Last element at bottom of header or section */
+header *:last-child,
+section *:last-child,
+footer *:last-child {
+  margin-bottom: 0;
+}
+
+/* ================= ENDS ================ */
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+  Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+.hero-block {
+  min-height: 700px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: gray;
+  overflow: none;
+  font-family: "Prompt", sans-serif;
+}
+
+.hero-bg-media {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 0;
+}
+
+.hero-bg-media * {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.bg-overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3));  
+}
+
+@media (min-width: 768px) {
+  .hero-block {
+    height: 80vh;
+  }
+}
+
+.hero-text-container {
+  padding: 0 12% 4% 12%;
+  z-index: 1;
+}
+
+.about_me-text-container {
+  padding: 70px 12% 8% 12%;
+  font-family: "Playfair Display", sans-serif;
+  font-size: 25px;
+}
+
+.about_me-heading {
+  padding-bottom: 2rem;
+}
+
+@media screen and (max-width: 768px) {
+  .about_me-text-container {
+    text-align: left;
+    font-size: 15px;
+    padding-top: 31px;
+  }
+}
+
+.hero-block h1,
+.hero-block h2 {
+  line-height: 1.2;
+  color: #fff;
+}
+
+.hero-block h1 {
+  margin-bottom: 24px;
+  text-shadow: 2px 2px #222;
+  font-size: 70px;
+}
+
+@media screen and (max-width: 768px) {
+  .hero-block h1 {
+    font-size: 30px;
+    letter-spacing: 5px;
+  }
+}
+
+.hero-block h2 {
+  font-weight: normal;
+  text-transform: uppercase;
+  text-shadow: 2px 2px #222;
+  
+}
+
+@media screen and (max-width: 768px) {
+  .hero-block h2 {
+    font-size: 20px;
+  }
+}
+
+/* ================ UTILITY CLASSES ============= */
+.text-center {
+  text-align: center;
+}
+
+.bg_image2 {
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-image: url(../img/redwood.jpg);
+    overflow-x: hidden;
+}
+
+.about_me {
+  background-color: rgb(20, 32, 46);
+  text-align: center;
+  font-size: 30px;
+  color: #fff;
+}
+
+/* Polaroid Images */
+
+a.polaroid {
+	display: block;
+	text-decoration: none;
+	text-align: left;
+	color: #333;
+	margin: 5px;
+	padding: 10px 10px 68px 10px;
+	width: 150px;
+	border: 1px solid #BFBFBF;
+	background-color: white;
+	z-index: 2;
+	font-size: 0.7em;
+	-webkit-box-shadow: 2px 2px 4px rgba(0,0, 0, 0.3);
+	-moz-box-shadow: 2px 2px 4px rgba(0,0, 0, 0.3);
+	box-shadow: 2px 2px 4px rgba(0,0, 0, 0.3);
+	transition: -webkit-transform 0.5s ease-in;
+}
+
+.tagline {
+	font-size: 1rem;
+	font-family: 'Prompt', sans-serif;
+	position: absolute;
+	font-weight: bold;
+	top: 352px;
+	left: 1px;
+}
+
+@media screen and (max-width: 768px) {
+	.tagline {
+		top: 251px;
+	}
+}
+
+a.polaroid:hover,
+a.polaroid:focus,
+a.polaroid:active {
+	z-index: 999;
+	border-color: #6A6A6A;
+	-webkit-box-shadow: 2px 2px 4px rgba(0,0, 0, 0.3);
+	-moz-box-shadow: 2px 2px 4px rgba(0,0, 0, 0.3);
+	box-shadow: 2px 2px 4px rgba(0,0, 0, 0.3);
+	-webkit-transform: rotate(0deg);
+	-moz-transform: rotate(0deg);
+	transform: rotate(0deg);
+	}
+
+.polaroid img {
+	margin: -11px 0 15px;
+	width: 150px;
+	height: 150px;
+	filter: grayscale(100%);
+}
+
+.polaroid img:hover {
+	filter: none;
+}
+
+a img {
+	border: none;
+	display: block;
+}
+
+.polaroid_gallery {
+	position: relative;
+	width: 80%;
+	margin: 0 auto;
+	max-width: 70em;
+	height: 450px;
+	min-width: 800px;
+	max-width: 900px;
+}
+
+.polaroid_gallery .polaroid {
+	position: absolute;
+}
+
+.polaroid_gallery .medium {
+	width: 200px;
+	padding: 23px 13px 20px 13px;
+	font-size: 0.8em;
+}
+
+@media screen and (max-width: 768px) {
+	.polaroid_gallery .medium {
+		width: 150px;
+	}
+}
+
+.polaroid_gallery .medium img {
+	width: 200px;
+	height: 200px;
+}
+
+@media screen and (max-width: 768px) {
+	.polaroid_gallery .medium img {
+		width: 150px;
+		height: 150px;
+	}
+}
+
+.polaroid_gallery .large {
+	width: 300px;
+	padding: 30px 20px 54px 20px;
+	font-size: 1em;
+}
+
+@media screen and (max-width: 768px) {
+	.polaroid_gallery .large {
+		width: 200px;
+	}
+}
+
+.polaroid_gallery .large img {
+	width: 300px;
+	height: 300px;
+}
+
+@media screen and (max-width: 768px) {
+	.polaroid_gallery .large img {
+		width: 200px;
+		height: 200px;
+	}
+}
+
+.polaroid_gallery .img1 {
+	bottom: -164px;
+	right: 700px;
+	-webkit-transform: rotate(10deg);
+	-moz-transform: rotate(10deg);
+	transform: rotate(10deg);
+}
+
+@media screen and (max-width: 768px) {
+	.polaroid_gallery .img1 {
+		bottom: -164px;
+		right: 600px;
+		-webkit-transform: rotate(10deg);
+		-moz-transform: rotate(10deg);
+		transform: rotate(10deg);
+	}
+}
+
+@media screen and (min-width: 768px) {
+	.polaroid_gallery .img1 {
+		bottom: -164px;
+		right: 423px;
+		-webkit-transform: rotate(10deg);
+		-moz-transform: rotate(10deg);
+		transform: rotate(10deg);
+	}
+}
+@media screen and (max-width: 768px) {
+	.polaroid_gallery .img1 {
+		bottom: -164px;
+		right: 526px;
+		-webkit-transform: rotate(10deg);
+		-moz-transform: rotate(10deg);
+		transform: rotate(10deg);
+	}
+}
+
+@media screen and (min-width: 1024px) {
+	.polaroid_gallery .img1 {
+		bottom: -100px;
+		right: 700px;
+		-webkit-transform: rotate(10deg);
+		-moz-transform: rotate(10deg);
+		transform: rotate(10deg);
+	}
+}
+
+.polaroid_gallery .img2 {
+	top: 149px;
+	right: -200px;
+	-webkit-transform: rotate(-4deg);
+	-moz-transform: rotate(-4deg);
+	transform: rotate(-4deg);
+}
+
+@media screen and (max-width: 768px) {
+	.polaroid_gallery .img2 {
+		top: 600px;
+	    right: 500px;
+	    -webkit-transform: rotate(-4deg);
+	    -moz-transform: rotate(-4deg);
+	    transform: rotate(-4deg);
+	}
+}
+
+.polaroid_gallery .img3 {
+	left: 149px;
+	top: 253px;
+	-webkit-transform: rotate(-5deg);
+	-moz-transform: rotate(-5deg);
+	transform: rotate(-5deg);
+}
+
+.polaroid_gallery .img4 {
+	top: 70px;
+	left: 191px;
+	-webkit-transform: rotate(-20deg);
+	-moz-transform: rotate(-20deg);
+	transform: rotate(-20deg);
+}
+
+.polaroid_gallery .img5 {
+	bottom: -133px;
+	right: -132px;
+	-webkit-transform: rotate(1deg);
+	-moz-transform: rotate(1deg);
+	transform: rotate(1deg);
+}
+
+.polaroid_gallery .img6 {
+	bottom: -243px;
+	right: 156px;
+	-webkit-transform: rotate(6deg);
+	-moz-transform: rotate(6deg);
+	transform: rotate(6deg);
+}
+
+.polaroid_gallery .img7 {
+	bottom: -41px;
+	left:400px;
+	-webkit-transform: rotate(-10deg);
+	-moz-transform: rotate(-10deg);
+	transform: rotate(-10deg);
+}
+
+/* Links */
+
+a:hover,
+	a:focus {
+	z-index: 5;
+}	
+
