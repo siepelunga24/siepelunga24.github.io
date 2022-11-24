@@ -58,12 +58,11 @@ body {
   Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 .hero-block {
-  min-height: 700px;
+  min-height: 800px;
   position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background-color: gray;
   overflow: none;
   font-family: "Prompt", sans-serif;
 }
@@ -75,42 +74,34 @@ body {
   left: 0;
   z-index: 0;
 }
-
 .hero-bg-media * {
   object-fit: cover;
   width: 100%;
   height: 100%;
 }
-
-@media (min-width: 768px) {
+@media screen and (max-width: 768px) {
   .hero-block {
-    height: 80vh;
+    min-height: 500px;
   }
 }
-
 .hero-text-container {
   padding: 0 12% 4% 12%;
   z-index: 1;
 }
-
 .about_me-text-container {
   padding: 70px 12% 8% 12%;
   font-family: "Playfair Display", sans-serif;
-  font-size: 25px;
+  font-size: calc(18px + (25 - 18) * ((100vw - 320px)/ (1600 - 320)));
 }
-
 .about_me-heading {
   padding-bottom: 2rem;
 }
-
 @media screen and (max-width: 768px) {
   .about_me-text-container {
     text-align: left;
-    font-size: 15px;
     padding-top: 31px;
   }
 }
-
 .hero-block h1,
 .hero-block h2 {
   line-height: 1.2;
@@ -120,37 +111,17 @@ body {
 .hero-block h1 {
   margin-bottom: 24px;
   text-shadow: 2px 2px #222;
-  font-size: 70px;
+  font-size: calc(36px + (95 - 36) * ((100vw - 320px)/ (1600 - 320)));
 }
-
-@media screen and (max-width: 768px) {
-  .hero-block h1 {
-    font-size: 30px;
-  }
-}
-@media screen and (min-width: 768px) {
-  .hero-block h1 {
-    font-size: 80px;
-  }
-}
-
 .hero-block h2 {
   font-weight: bold;
-  text-shadow: 2px 2px #222;
-  
+  text-shadow: 2px 2px #222; 
+  font-size: calc(20px + (30 - 20) * ((100vw - 320px)/ (1600 - 320)));
 }
 
-@media screen and (max-width: 768px) {
-  .hero-block h2 {
-    font-size: 19px;
-  }
-}
-
-/* ================ UTILITY CLASSES ============= */
 .text-center {
   text-align: center;
 }
-
 .bg_image2 {
     width: 100%;
     height: 100vh;
@@ -159,15 +130,13 @@ body {
     background-image: url(../img/redwood.jpg);
     overflow-x: hidden;
 }
-
 .about_me {
   text-align: center;
   font-size: 30px;
-  color: black;
+  color: rgb(48, 47, 47);
+  background-color: rgb(225, 209, 209);
 }
-
 /* Polaroid Images */
-
 a.polaroid {
 	display: block;
 	text-decoration: none;
@@ -185,7 +154,6 @@ a.polaroid {
 	box-shadow: 2px 2px 4px rgba(0,0, 0, 0.3);
 	transition: -webkit-transform 0.5s ease-in;
 }
-
 .tagline {
 	font-size: 1rem;
 	font-family: 'Prompt', sans-serif;
@@ -194,13 +162,11 @@ a.polaroid {
 	top: 352px;
 	left: 1px;
 }
-
 @media screen and (max-width: 768px) {
 	.tagline {
 		top: 251px;
 	}
 }
-
 a.polaroid:hover,
 a.polaroid:focus,
 a.polaroid:active {
@@ -213,23 +179,19 @@ a.polaroid:active {
 	-moz-transform: rotate(0deg);
 	transform: rotate(0deg);
 	}
-
 .polaroid img {
 	margin: -11px 0 15px;
 	width: 150px;
 	height: 150px;
 	filter: grayscale(100%);
 }
-
 .polaroid img:hover {
 	filter: none;
 }
-
 a img {
 	border: none;
 	display: block;
 }
-
 .polaroid_gallery {
 	position: relative;
 	width: 80%;
@@ -239,59 +201,49 @@ a img {
 	min-width: 800px;
 	max-width: 900px;
 }
-
 .polaroid_gallery .polaroid {
 	position: absolute;
 }
-
 .polaroid_gallery .medium {
 	width: 200px;
 	padding: 23px 13px 20px 13px;
 	font-size: 0.8em;
 }
-
 @media screen and (max-width: 768px) {
 	.polaroid_gallery .medium {
 		width: 150px;
 	}
 }
-
 .polaroid_gallery .medium img {
 	width: 200px;
 	height: 200px;
 }
-
 @media screen and (max-width: 768px) {
 	.polaroid_gallery .medium img {
 		width: 150px;
 		height: 150px;
 	}
 }
-
 .polaroid_gallery .large {
 	width: 300px;
 	padding: 30px 20px 54px 20px;
 	font-size: 1em;
 }
-
 @media screen and (max-width: 768px) {
 	.polaroid_gallery .large {
 		width: 200px;
 	}
 }
-
 .polaroid_gallery .large img {
 	width: 300px;
 	height: 300px;
 }
-
 @media screen and (max-width: 768px) {
 	.polaroid_gallery .large img {
 		width: 200px;
 		height: 200px;
 	}
 }
-
 .polaroid_gallery .img1 {
 	bottom: -164px;
 	right: 700px;
@@ -299,7 +251,6 @@ a img {
 	-moz-transform: rotate(10deg);
 	transform: rotate(10deg);
 }
-
 @media screen and (max-width: 768px) {
 	.polaroid_gallery .img1 {
 		bottom: -164px;
@@ -309,7 +260,6 @@ a img {
 		transform: rotate(10deg);
 	}
 }
-
 @media screen and (min-width: 768px) {
 	.polaroid_gallery .img1 {
 		bottom: -164px;
@@ -328,7 +278,6 @@ a img {
 		transform: rotate(10deg);
 	}
 }
-
 @media screen and (min-width: 1024px) {
 	.polaroid_gallery .img1 {
 		bottom: -100px;
@@ -338,7 +287,6 @@ a img {
 		transform: rotate(10deg);
 	}
 }
-
 .polaroid_gallery .img2 {
 	top: 149px;
 	right: -200px;
@@ -346,7 +294,6 @@ a img {
 	-moz-transform: rotate(-4deg);
 	transform: rotate(-4deg);
 }
-
 @media screen and (max-width: 768px) {
 	.polaroid_gallery .img2 {
 		top: 600px;
@@ -356,7 +303,6 @@ a img {
 	    transform: rotate(-4deg);
 	}
 }
-
 .polaroid_gallery .img3 {
 	left: 149px;
 	top: 253px;
@@ -364,7 +310,6 @@ a img {
 	-moz-transform: rotate(-5deg);
 	transform: rotate(-5deg);
 }
-
 .polaroid_gallery .img4 {
 	top: 70px;
 	left: 191px;
@@ -372,7 +317,6 @@ a img {
 	-moz-transform: rotate(-20deg);
 	transform: rotate(-20deg);
 }
-
 .polaroid_gallery .img5 {
 	bottom: -133px;
 	right: -132px;
@@ -380,7 +324,6 @@ a img {
 	-moz-transform: rotate(1deg);
 	transform: rotate(1deg);
 }
-
 .polaroid_gallery .img6 {
 	bottom: -243px;
 	right: 156px;
@@ -388,7 +331,6 @@ a img {
 	-moz-transform: rotate(6deg);
 	transform: rotate(6deg);
 }
-
 .polaroid_gallery .img7 {
 	bottom: -41px;
 	left:400px;
@@ -396,9 +338,7 @@ a img {
 	-moz-transform: rotate(-10deg);
 	transform: rotate(-10deg);
 }
-
 /* Links */
-
 a:hover,
 	a:focus {
 	z-index: 5;
