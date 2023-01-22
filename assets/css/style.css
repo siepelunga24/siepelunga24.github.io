@@ -46,13 +46,7 @@ section,
 footer {
   width: 100%;
 }
-/* Last element at bottom of header or section */
-header *:last-child,
-section *:last-child,
-footer *:last-child {
-  margin-bottom: 0;
-}
-/* ================= ENDS ================ */
+
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
   Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
@@ -66,6 +60,92 @@ body {
   overflow: none;
   font-family: "Prompt", sans-serif;
 }
+.hero-block .btn-container {
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+}
+@media screen and (max-width: 300px) {
+  .hero-block .btn-container {
+    flex-direction: column;
+  }
+}
+.btn-container {
+	padding-top: 40px;
+	font-family: "Special Elite", sans-serif;
+}
+.btn, .show-modal {
+  text-decoration: none;
+  border: 1px solid white;
+  cursor: pointer;
+  margin: 1rem 1rem;
+  padding: 0.9rem 1rem;
+  font-size: 1.4rem;
+  text-align: center;
+  font-weight: 600;
+  color: white;
+  border-radius: 10px;
+}
+.btn-outline:hover {
+  background-color: white;
+  color: black;
+  transition: 0.5s;
+}
+.btn > :nth-child(2) {
+  margin-left: 8px;
+}
+.btn-solid {
+  background-color: white;
+  color: black;
+}
+.btn-solid:hover {
+  background-color: rgb(70, 67, 67);
+  color: white;
+  transition: 0.5s;
+}
+@media screen and (max-width: 768px) {
+  .btn, .show-modal {
+    font-size: 10px;
+	padding: 10px 5px;
+  }
+}
+.hidden {
+  display: none;
+}
+.close-modal {
+  position: absolute;
+  top: 1.2rem;
+  right: 2rem;
+  font-size: 5rem;
+  color: #333;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40%;
+  background-color: white;
+  padding: 4rem;
+  border-radius: 5px;
+  box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
+  z-index: 10;
+  text-align: left;
+  font-size: 20px;
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(3px);
+  z-index: 1;
+}
 .hero-bg-media {
   position: absolute;
   top: 0;
@@ -73,6 +153,22 @@ body {
   bottom: 0;
   left: 0;
   z-index: 0;
+}
+.media-overlay_hero {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3));
+}
+.media-overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
 }
 .hero-bg-media * {
   object-fit: cover;
@@ -88,10 +184,26 @@ body {
   padding: 0 12% 4% 12%;
   z-index: 1;
 }
+.about_me {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 .about_me-text-container {
-  padding: 70px 12% 8% 12%;
-  font-family: "Playfair Display", sans-serif;
-  font-size: calc(18px + (25 - 18) * ((100vw - 320px)/ (1600 - 320)));
+  padding-right: 40%;
+  padding-left: 4%;
+  padding-top: 5%;
+  padding-bottom: 5%;
+  font-family: "Special Elite", sans-serif;
+  font-size: calc(18px + (23 - 18) * ((100vw - 320px)/ (1600 - 320)));
+  z-index: 1;
+  color: rgb(255, 255, 255);
+}
+@media screen and (max-width: 768px) {
+	.about_me-text-container {
+		padding: 70px 6% 8% 10%;
+	}
 }
 .about_me-heading {
   padding-bottom: 2rem;
@@ -105,13 +217,13 @@ body {
 .hero-block h1,
 .hero-block h2 {
   line-height: 1.2;
-  color: #fff;
+  color: rgb(255, 255, 255);
 }
 
 .hero-block h1 {
   margin-bottom: 24px;
   text-shadow: 2px 2px #222;
-  font-size: calc(36px + (95 - 36) * ((100vw - 320px)/ (1600 - 320)));
+  font-size: calc(20px + (100 - 20) * ((100vw - 320px)/ (1600 - 320)));
 }
 .hero-block h2 {
   font-weight: bold;
@@ -128,13 +240,13 @@ body {
     background-size: cover;
     background-position: center;
     background-image: url(../img/redwood.jpg);
-    overflow-x: hidden;
+	filter: grayscale(10);
+	overflow: hidden;
 }
-.about_me {
-  text-align: center;
-  font-size: 30px;
-  color: rgb(48, 47, 47);
-  background-color: rgb(225, 209, 209);
+@media screen and (max-width: 768px) {
+	.bg_image2 {
+		height: 130vh;
+	}
 }
 /* Polaroid Images */
 a.polaroid {
@@ -155,16 +267,18 @@ a.polaroid {
 	transition: -webkit-transform 0.5s ease-in;
 }
 .tagline {
-	font-size: 1rem;
-	font-family: 'Prompt', sans-serif;
+	font-size: 1.5rem;
 	position: absolute;
 	font-weight: bold;
 	top: 352px;
-	left: 1px;
+	left: 5px;
+	font-family: "Special Elite", sans-serif;
 }
+
 @media screen and (max-width: 768px) {
 	.tagline {
 		top: 251px;
+		font-size: 1rem;
 	}
 }
 a.polaroid:hover,
@@ -226,7 +340,7 @@ a img {
 }
 .polaroid_gallery .large {
 	width: 300px;
-	padding: 30px 20px 54px 20px;
+	padding: 30px 20px 93px 20px;
 	font-size: 1em;
 }
 @media screen and (max-width: 768px) {
@@ -254,7 +368,7 @@ a img {
 @media screen and (max-width: 768px) {
 	.polaroid_gallery .img1 {
 		bottom: -164px;
-		right: 600px;
+		right: 526px;
 		-webkit-transform: rotate(10deg);
 		-moz-transform: rotate(10deg);
 		transform: rotate(10deg);
@@ -264,15 +378,6 @@ a img {
 	.polaroid_gallery .img1 {
 		bottom: -164px;
 		right: 423px;
-		-webkit-transform: rotate(10deg);
-		-moz-transform: rotate(10deg);
-		transform: rotate(10deg);
-	}
-}
-@media screen and (max-width: 768px) {
-	.polaroid_gallery .img1 {
-		bottom: -164px;
-		right: 526px;
 		-webkit-transform: rotate(10deg);
 		-moz-transform: rotate(10deg);
 		transform: rotate(10deg);
@@ -318,8 +423,8 @@ a img {
 	transform: rotate(-20deg);
 }
 .polaroid_gallery .img5 {
-	bottom: -133px;
-	right: -132px;
+	bottom: -189px;
+    right: -246px;
 	-webkit-transform: rotate(1deg);
 	-moz-transform: rotate(1deg);
 	transform: rotate(1deg);
@@ -338,9 +443,17 @@ a img {
 	-moz-transform: rotate(-10deg);
 	transform: rotate(-10deg);
 }
+@media screen and (max-width: 768px) {
+	.polaroid_gallery .img7 {
+		bottom: -164px;
+		right: 300px;
+		-webkit-transform: rotate(10deg);
+		-moz-transform: rotate(10deg);
+		transform: rotate(10deg);
+	}
+}
 /* Links */
 a:hover,
 	a:focus {
 	z-index: 5;
 }	
-
