@@ -373,7 +373,7 @@ a img {
 @media screen and (max-width: 1024px) {
 	.polaroid_gallery .img1 {
 		bottom: -4%;
-		right: 53%;
+		right: 61%;
 	}
 }
 @media screen and (max-width: 300px) {
@@ -399,7 +399,7 @@ a img {
 @media screen and (max-width: 1024px) {
 	.polaroid_gallery .img3 {
 		top: 104%;
-		left: 12%;
+		left: 6%;
 	}
 }
 @media screen and (max-width: 300px) {
