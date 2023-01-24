@@ -122,6 +122,11 @@ body {
   border: none;
   background: none;
 }
+@media screen and (max-width: 768px) {
+  .close-modal {
+    font-size: 2rem;
+  }
+}
 .modal {
   position: absolute;
   top: 50%;
@@ -245,8 +250,8 @@ body {
     background-size: cover;
     background-position: center;
     background-image: url(../img/redwood.jpg);
-	filter: grayscale(10);
-	overflow: hidden;
+	  filter: grayscale(10);
+	  overflow: hidden;
 }
 @media screen and (max-width: 768px) {
 	.bg_image2 {
@@ -345,7 +350,7 @@ a img {
 }
 .polaroid_gallery .large {
 	width: 300px;
-	padding: 30px 20px 93px 20px;
+	padding: 30px 20px 50px 20px;
 	font-size: 1em;
 }
 @media screen and (max-width: 768px) {
